@@ -27,3 +27,7 @@ this is simple application which can do some basic operation such as create a co
 	```
     python app.py
 	```
+5. **executable**
+        ```
+   You can download this artifact from the GitHub Actions workflow run page
+        ```
