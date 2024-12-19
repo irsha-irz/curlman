@@ -36,7 +36,7 @@ jobs:
         ls -l dist # List the output directory
 
     - name: Upload Executable
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: python-executable
-        path: dist/app
+        name: curlman
+        path: dist
