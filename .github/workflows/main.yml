@@ -32,7 +32,7 @@ jobs:
     - name: Build Executable
       run: |
         source venv/bin/activate
-        pyinstaller --onefile --noconsole ./src/app.py -n curlman
+        pyinstaller --onefile --noconsole src/app.py -n curlman
         ls -l dist # List the output directory
 
     - name: Upload Executable
