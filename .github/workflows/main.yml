@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Code
@@ -19,24 +19,23 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10' # Replace with your required Python version
+        python-version: "3.10" # Replace with your required Python version
 
     - name: Install Dependencies
       run: |
         python -m venv venv
-        source venv/bin/activate
+        venv\Scripts\activate
         pip install --upgrade pip
-        pip install -r requirments.txt
         pip install pyinstaller
 
     - name: Build Executable
       run: |
-        source venv/bin/activate
-        pyinstaller --onefile --noconsole src/app.py -n curlman.exe
-        ls -l dist # List the output directory
+        venv\Scripts\activate
+        pyinstaller --onefile --noconsole src\app.py -n curlman
+        dir dist # List the output directory
 
     - name: Upload Executable
       uses: actions/upload-artifact@v4
       with:
-        name: curlman
-        path: dist
+        name: python-executable
+        path: dist\curlman.exe
