@@ -1,0 +1,46 @@
+{
+    "fat-boi/booking": {
+        "travel-ticket": {
+            "url": "http://localhost:8000/api/booking/travel-ticket/",
+            "headers": {
+                "Authorization": "Token cb6e551a395ded58dd4c9c1dff3b0fe95f18d867"
+            },
+            "body": "ticket=@C:\\Users\\91974\\Downloads\\Bust-ticket-rahoofa.png\ndestination_id=1\ntransportation_mode=train",
+            "query_params": {},
+            "method": "POST",
+            "body_type": "Form-Data"
+        },
+        "vehicle-details": {
+            "url": "http://127.0.0.1:8000/api/booking/travel-vehicle/vehicle-detail/",
+            "headers": {
+                "Authorization": "Token cb6e551a395ded58dd4c9c1dff3b0fe95f18d867"
+            },
+            "body": "{\n  \"transport-mode\": \"owned\",\n  \"vehicle-type\": \"traveller\",\n  \"vehicle-number\": \"MH12AB1234\",\n  \"transportation-cost\": 2500,\n//   \"pickup-details\": {\n//     \"pickup-time\": \"10:00:00\",\n//     \"pickup-location\": \"123 Main Street, City Center, Springfield\"\n//   },\n//   \"driver-details\": {\n//     \"driver-name\": \"John Doe\",\n//     \"driver-number\": \"+1-234-567-8901\"\n//   },\n  \"destination_id\":3\n}",
+            "query_params": {},
+            "method": "POST",
+            "body_type": "JSON"
+        },
+        "tracvel ticket pdf": {
+            "url": "http://localhost:8000/api/booking/travel-ticket/",
+            "headers": {
+                "Authorization": "Token cb6e551a395ded58dd4c9c1dff3b0fe95f18d867"
+            },
+            "body": "ticket=@C:\\Users\\91974\\Downloads\\travel.pdf\ndestination_id=1\ntransportation_mode=train",
+            "query_params": {},
+            "method": "POST",
+            "body_type": "Form-Data"
+        }
+    },
+    "fat-boi/users": {
+        "my-traveler": {
+            "url": "http://localhost:8000/users/my-traveler/",
+            "headers": {
+                "Authorization": "Token cb6e551a395ded58dd4c9c1dff3b0fe95f18d867"
+            },
+            "body": "{\n\t    \"first_name\": \"sadiq\",\n            \"last_name\": \"c\",\n            \"gender\": \"Male\",\n            \"age\": \"24\",\n            \"age_category\": \"Child\",\n            \"email\": \"sadiq@gmail.com\",\n            \"is_added_to_trip\": 1,\n            \"title\": \"test\",\n            \"middle_name\":\"\",\n            \"pax_type\":\"\",\n            \"lead_passenger\": \"\",\n            \"passport_no\":\"\",\n            \"passport_issue_date\":\"\",\n            \"passport_exp_date\":\"\",\n            \"pan\":\"\",\n            \"date_of_birth\": \"\"\n}",
+            "query_params": {},
+            "method": "POST",
+            "body_type": "JSON"
+        }
+    }
+}
