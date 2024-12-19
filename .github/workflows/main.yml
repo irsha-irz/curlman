@@ -1,0 +1,41 @@
+name: Build Python Executable
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' # Replace with your required Python version
+
+    - name: Install Dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install --upgrade pip
+        pip install pyinstaller
+
+    - name: Build Executable
+      run: |
+        source venv/bin/activate
+        pyinstaller --onefile --noconsole ./src/app.py
+        ls -l dist # List the output directory
+
+    - name: Upload Executable
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-executable
+        path: dist/app
